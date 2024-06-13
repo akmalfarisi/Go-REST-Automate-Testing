@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-06-13T16:44:31.823421" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Cases" source="E:\akmal_alfarisi\Go-REST-Automate-Testing\tests\test_cases.robot">
+<test id="s1-t1" name="Get user details" line="9">
+<kw name="Get users" owner="keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:33.196391" level="INFO">Creating Session using : alias=gorest, url=https://gorest.co.in/public/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>gorest</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T16:44:33.196391" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:33.197390" level="INFO">${url} = https://gorest.co.in/public/v2/users?name=akmal</msg>
+<var>${url}</var>
+<arg>${base_url}/users?${param}=${value}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:33.197390" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:33.198390" level="INFO">${headers} = {'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Authorization=${token}</arg>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:33.197390" elapsed="0.001000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:34.254403" level="INFO">GET Request : url=https://gorest.co.in/public/v2/users?name=akmal 
+ path_url=/public/v2/users?name=akmal 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-06-13T16:44:34.255402" level="INFO">GET Response : url=https://gorest.co.in/public/v2/users?name=akmal 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 13 Jun 2024 09:44:35 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0, private, must-revalidate', 'etag': 'W/"c5f30b2c4c9c07f0b68072b487eae617"', 'referrer-policy': 'strict-origin-when-cross-origin', 'vary': 'Origin', 'x-content-type-options': 'nosniff', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-links-current': 'https://gorest.co.in/public/v2/users?page=1', 'x-links-next': 'https://gorest.co.in/public/v2/users?page=2', 'x-links-previous': '', 'x-pagination-limit': '10', 'x-pagination-page': '1', 'x-pagination-pages': '1', 'x-pagination-total': '9', 'x-permitted-cross-domain-policies': 'none', 'x-ratelimit-limit': '90', 'x-ratelimit-remaining': '88', 'x-ratelimit-reset': '1', 'x-request-id': 'f839bb18-8f10-42e0-ab21-1690211cc1c2', 'x-runtime': '0.147053', 'x-xss-protection': '0', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=91rseny4BfQATPz44TH8RQsXRJLHuQiKnxYwP7M1Izq7jhZ47KrGcvLVCRNO%2FTwiE9G%2FUgrQwnQZI4MuUWgI4P8oKprUhFi2kyCkvUdzGtANM7XFjQ3Pdp6AbT1FCXA%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '893124950ae9a089-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":6961984,"name":"Akmal","email":"akmal@gmail.co.id","gender":"male","status":"active"},{"id":6961978,"name":"Akmal","email":"akmal@xxz.xyz","gender":"male","status":"active"},{"id":6961975,"name":"Akmal","email":"akmal@xyz.xyz","gender":"male","status":"active"},{"id":6961959,"name":"Akmal","email":"akmal@xyz.test","gender":"male","status":"active"},{"id":6961951,"name":"Akmal","email":"akmal@test.test","gender":"male","status":"active"},{"id":6961944,"name":"Akmal","email":"akmal@test.com","gender":"male","status":"active"},{"id":6961848,"name":"Akmal","email":"akmal@gmail.xyz","gender":"male","status":"active"},{"id":6961826,"name":"Akmal","email":"akmal@test.xyz","gender":"male","status":"active"},{"id":6961780,"name":"Akmal","email":"akmal@gmail.com","gender":"male","status":"active"}] 
+ </msg>
+<msg time="2024-06-13T16:44:34.255402" level="INFO">C:\Users\ALFAONE\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gorest.co.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-06-13T16:44:34.257401" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>gorest</arg>
+<arg>${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T16:44:33.198390" elapsed="1.059011"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-06-13T16:44:34.258422" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.257401" elapsed="0.002020"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-13T16:44:34.260420" level="INFO">[{"id":6961984,"name":"Akmal","email":"akmal@gmail.co.id","gender":"male","status":"active"},{"id":6961978,"name":"Akmal","email":"akmal@xxz.xyz","gender":"male","status":"active"},{"id":6961975,"name":"Akmal","email":"akmal@xyz.xyz","gender":"male","status":"active"},{"id":6961959,"name":"Akmal","email":"akmal@xyz.test","gender":"male","status":"active"},{"id":6961951,"name":"Akmal","email":"akmal@test.test","gender":"male","status":"active"},{"id":6961944,"name":"Akmal","email":"akmal@test.com","gender":"male","status":"active"},{"id":6961848,"name":"Akmal","email":"akmal@gmail.xyz","gender":"male","status":"active"},{"id":6961826,"name":"Akmal","email":"akmal@test.xyz","gender":"male","status":"active"},{"id":6961780,"name":"Akmal","email":"akmal@gmail.com","gender":"male","status":"active"}]</msg>
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.259421" elapsed="0.000999"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-06-13T16:44:34.260420" elapsed="0.000000"/>
+</return>
+<arg>name</arg>
+<arg>akmal</arg>
+<status status="PASS" start="2024-06-13T16:44:33.195388" elapsed="1.065032"/>
+</kw>
+<status status="PASS" start="2024-06-13T16:44:33.194050" elapsed="1.067370"/>
+</test>
+<test id="s1-t2" name="Create Users From Excel" line="12">
+<kw name="Read Excel Data" owner="ExcelLibrary">
+<msg time="2024-06-13T16:44:34.273390" level="INFO">${users} = [{'name': 'Akmal', 'email': 'akmal@akmal.id', 'gender': 'male', 'status': 'active'}, {'name': 'Kartika', 'email': 'kartika@kartika.id', 'gender': 'female', 'status': 'inactive'}, {'name': 'Rahman', 'e...</msg>
+<var>${users}</var>
+<arg>${EXCEL_FILE}</arg>
+<status status="PASS" start="2024-06-13T16:44:34.263400" elapsed="0.009990"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Create User" owner="keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:34.275413" level="INFO">${name} = Akmal</msg>
+<var>${name}</var>
+<arg>${user}[name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.275413" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:34.276412" level="INFO">${email} = akmal@akmal.id</msg>
+<var>${email}</var>
+<arg>${user}[email]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.276412" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:34.276412" level="INFO">${gender} = male</msg>
+<var>${gender}</var>
+<arg>${user}[gender]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.276412" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:34.277412" level="INFO">${status} = active</msg>
+<var>${status}</var>
+<arg>${user}[status]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.277412" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:34.278388" level="INFO">${data} = {'name': 'Akmal', 'email': 'akmal@akmal.id', 'gender': 'male', 'status': 'active'}</msg>
+<var>${data}</var>
+<arg>name=${name}</arg>
+<arg>email=${email}</arg>
+<arg>gender=${gender}</arg>
+<arg>status=${status}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.278388" elapsed="0.000000"/>
+</kw>
+<kw name="Create User With Data" owner="keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:34.280409" level="INFO">&amp;{headers} = { Authorization=Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c | Content-Type=application/json }</msg>
+<var>&amp;{headers}</var>
+<arg>Authorization=${token}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.279410" elapsed="0.000999"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:34.281409" level="INFO">Creating Session using : alias=gorest, url=https://gorest.co.in, headers={'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>gorest</arg>
+<arg>https://gorest.co.in</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T16:44:34.280409" elapsed="0.001000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:34.834611" level="INFO">POST Request : url=https://gorest.co.in/public/v2/users 
+ path_url=/public/v2/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json', 'Content-Length': '82'} 
+ body=b'{"name": "Akmal", "email": "akmal@akmal.id", "gender": "male", "status": "active"}' 
+ </msg>
+<msg time="2024-06-13T16:44:34.835610" level="INFO">POST Response : url=https://gorest.co.in/public/v2/users 
+ status=201, reason=Created 
+ headers={'Date': 'Thu, 13 Jun 2024 09:44:36 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '88', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0, private, must-revalidate', 'etag': 'W/"0a3902659baf8e2a29bf07cf2228f302"', 'location': 'https://gorest.co.in/public/v2/users/6961985', 'referrer-policy': 'strict-origin-when-cross-origin', 'vary': 'Origin', 'x-content-type-options': 'nosniff', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-ratelimit-limit': '90', 'x-ratelimit-remaining': '89', 'x-ratelimit-reset': '2', 'x-request-id': 'f724db2b-fb4a-4d46-916b-593ed2f97181', 'x-runtime': '0.078933', 'x-xss-protection': '0', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=zQQKsVmRqhEhv9YYa%2B3kQxkXKYgLc4cL07SMCkQ7QupM6MKg6OFNEhn0qC5seAQylurwVSWWEhZUQlP%2F3zlchE%2B5xtjDLGZdlub8i502IOthbE1pk4Rhsu5yaoHr4d0%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '89312499fed940d4-SIN', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":6961985,"name":"Akmal","email":"akmal@akmal.id","gender":"male","status":"active"} 
+ </msg>
+<msg time="2024-06-13T16:44:34.835610" level="INFO">C:\Users\ALFAONE\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gorest.co.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-06-13T16:44:34.838725" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>gorest</arg>
+<arg>/public/v2/users</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.281409" elapsed="0.557316"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-06-13T16:44:34.841716" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.839717" elapsed="0.002999"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-13T16:44:34.843715" level="INFO">User created with data: {'name': 'Akmal', 'email': 'akmal@akmal.id', 'gender': 'male', 'status': 'active'}</msg>
+<arg>User created with data: ${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.842716" elapsed="0.000999"/>
+</kw>
+<kw name="List users" owner="keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:34.845714" level="INFO">Creating Session using : alias=gorest, url=https://gorest.co.in/public/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>gorest</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T16:44:34.844714" elapsed="0.001998"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:34.847713" level="INFO">${url} = https://gorest.co.in/public/v2/users</msg>
+<var>${url}</var>
+<arg>${base_url}/users</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.847713" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:34.849712" level="INFO">${headers} = {'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Authorization=${token}</arg>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.848712" elapsed="0.001000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:35.503510" level="INFO">GET Request : url=https://gorest.co.in/public/v2/users 
+ path_url=/public/v2/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-06-13T16:44:35.504510" level="INFO">GET Response : url=https://gorest.co.in/public/v2/users 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 13 Jun 2024 09:44:36 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0, private, must-revalidate', 'etag': 'W/"2decf584cf17744a2bc919b1ab38f770"', 'referrer-policy': 'strict-origin-when-cross-origin', 'vary': 'Origin', 'x-content-type-options': 'nosniff', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-links-current': 'https://gorest.co.in/public/v2/users?page=1', 'x-links-next': 'https://gorest.co.in/public/v2/users?page=2', 'x-links-previous': '', 'x-pagination-limit': '10', 'x-pagination-page': '1', 'x-pagination-pages': '300', 'x-pagination-total': '2996', 'x-permitted-cross-domain-policies': 'none', 'x-ratelimit-limit': '90', 'x-ratelimit-remaining': '88', 'x-ratelimit-reset': '2', 'x-request-id': '9f0e2fff-7ea8-4d5f-a767-b38bae5d89db', 'x-runtime': '0.103467', 'x-xss-protection': '0', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=OnzbZKVXWwGqhPregQ0N1jzHMDwX8LPwe4RRYvfxQYYA2xAQD%2BEydI1vCijRbY5oLyN2J5OGwSH2oSEDRWaZ1bE7w2FmcPtMImZ2Zdj7xVSVgIPj20WjbLtmJPzEiB0%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8931249d2cca603b-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":6961985,"name":"Akmal","email":"akmal@akmal.id","gender":"male","status":"active"},{"id":6961984,"name":"Akmal","email":"akmal@gmail.co.id","gender":"male","status":"active"},{"id":6961981,"name":"Olivia","email":"olivia@xyz.xyz","gender":"female","status":"inactive"},{"id":6961980,"name":"Rahman","email":"rahman@xyz.xyz","gender":"male","status":"active"},{"id":6961979,"name":"Kartika","email":"kartika@xyz.xyz","gender":"female","status":"inactive"},{"id":6961978,"name":"Akmal","email":"akmal@xxz.xyz","gender":"male","status":"active"},{"id":6961975,"name":"Akmal","email":"akmal@xyz.xyz","gender":"male","status":"active"},{"id":6961962,"name":"Olivia","email":"olivia@xyz.test","gender":"female","status":"inactive"},{"id":6961961,"name":"Rahman","email":"rahman@xyz.test","gender":"male","status":"active"},{"id":6961960,"name":"Kartika","email":"kartika@xyz.test","gender":"female","status":"inactive"}] 
+ </msg>
+<msg time="2024-06-13T16:44:35.504510" level="INFO">C:\Users\ALFAONE\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gorest.co.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-06-13T16:44:35.508507" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>gorest</arg>
+<arg>${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.849712" elapsed="0.658795"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-06-13T16:44:35.513504" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-06-13T16:44:35.509507" elapsed="0.003997"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-13T16:44:35.517501" level="INFO">[{"id":6961985,"name":"Akmal","email":"akmal@akmal.id","gender":"male","status":"active"},{"id":6961984,"name":"Akmal","email":"akmal@gmail.co.id","gender":"male","status":"active"},{"id":6961981,"name":"Olivia","email":"olivia@xyz.xyz","gender":"female","status":"inactive"},{"id":6961980,"name":"Rahman","email":"rahman@xyz.xyz","gender":"male","status":"active"},{"id":6961979,"name":"Kartika","email":"kartika@xyz.xyz","gender":"female","status":"inactive"},{"id":6961978,"name":"Akmal","email":"akmal@xxz.xyz","gender":"male","status":"active"},{"id":6961975,"name":"Akmal","email":"akmal@xyz.xyz","gender":"male","status":"active"},{"id":6961962,"name":"Olivia","email":"olivia@xyz.test","gender":"female","status":"inactive"},{"id":6961961,"name":"Rahman","email":"rahman@xyz.test","gender":"male","status":"active"},{"id":6961960,"name":"Kartika","email":"kartika@xyz.test","gender":"female","status":"inactive"}]</msg>
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-13T16:44:35.514505" elapsed="0.003996"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-06-13T16:44:35.518501" elapsed="0.000000"/>
+</return>
+<status status="PASS" start="2024-06-13T16:44:34.844714" elapsed="0.674787"/>
+</kw>
+<arg>${data}</arg>
+<status status="PASS" start="2024-06-13T16:44:34.279410" elapsed="1.240091"/>
+</kw>
+<arg>${user}</arg>
+<status status="PASS" start="2024-06-13T16:44:34.274393" elapsed="1.245108"/>
+</kw>
+<var name="${user}">{'name': 'Akmal', 'email': 'akmal@akmal.id', 'gender': 'male', 'status': 'active'}</var>
+<status status="PASS" start="2024-06-13T16:44:34.274393" elapsed="1.246107"/>
+</iter>
+<iter>
+<kw name="Create User" owner="keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:35.525500" level="INFO">${name} = Kartika</msg>
+<var>${name}</var>
+<arg>${user}[name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:35.524498" elapsed="0.001002"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:35.528497" level="INFO">${email} = kartika@kartika.id</msg>
+<var>${email}</var>
+<arg>${user}[email]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:35.526498" elapsed="0.001999"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:35.530496" level="INFO">${gender} = female</msg>
+<var>${gender}</var>
+<arg>${user}[gender]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:35.529498" elapsed="0.000998"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:35.530496" level="INFO">${status} = inactive</msg>
+<var>${status}</var>
+<arg>${user}[status]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:35.530496" elapsed="0.000997"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:35.532493" level="INFO">${data} = {'name': 'Kartika', 'email': 'kartika@kartika.id', 'gender': 'female', 'status': 'inactive'}</msg>
+<var>${data}</var>
+<arg>name=${name}</arg>
+<arg>email=${email}</arg>
+<arg>gender=${gender}</arg>
+<arg>status=${status}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:35.531493" elapsed="0.001000"/>
+</kw>
+<kw name="Create User With Data" owner="keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:35.534491" level="INFO">&amp;{headers} = { Authorization=Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c | Content-Type=application/json }</msg>
+<var>&amp;{headers}</var>
+<arg>Authorization=${token}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:35.534491" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:35.536489" level="INFO">Creating Session using : alias=gorest, url=https://gorest.co.in, headers={'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>gorest</arg>
+<arg>https://gorest.co.in</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T16:44:35.535498" elapsed="0.000991"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:36.332611" level="INFO">POST Request : url=https://gorest.co.in/public/v2/users 
+ path_url=/public/v2/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json', 'Content-Length': '92'} 
+ body=b'{"name": "Kartika", "email": "kartika@kartika.id", "gender": "female", "status": "inactive"}' 
+ </msg>
+<msg time="2024-06-13T16:44:36.333610" level="INFO">POST Response : url=https://gorest.co.in/public/v2/users 
+ status=201, reason=Created 
+ headers={'Date': 'Thu, 13 Jun 2024 09:44:37 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '98', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0, private, must-revalidate', 'etag': 'W/"171c676234adb23cf4ff91d518ef6821"', 'location': 'https://gorest.co.in/public/v2/users/6961986', 'referrer-policy': 'strict-origin-when-cross-origin', 'vary': 'Origin', 'x-content-type-options': 'nosniff', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-ratelimit-limit': '90', 'x-ratelimit-remaining': '87', 'x-ratelimit-reset': '2', 'x-request-id': 'b5a0f843-a7c5-4003-8b73-9821104afdba', 'x-runtime': '0.105234', 'x-xss-protection': '0', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=OwtwRjwTz35tRmHZFfh9ChBjX8F88VlRAz%2BYAGgdIYjxV0SH1tH4oD9tc1xQ7iUSeXXPOpaExFNSqsoByaG1wnrnEsuT5K9CBOZPWdIGIAHIMieeXrzLt2D0z%2FzlnOI%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '893124a24c683f87-SIN', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":6961986,"name":"Kartika","email":"kartika@kartika.id","gender":"female","status":"inactive"} 
+ </msg>
+<msg time="2024-06-13T16:44:36.333610" level="INFO">C:\Users\ALFAONE\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gorest.co.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-06-13T16:44:36.336575" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>gorest</arg>
+<arg>/public/v2/users</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T16:44:35.537489" elapsed="0.800084"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-06-13T16:44:36.340608" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.337573" elapsed="0.003035"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-13T16:44:36.341594" level="INFO">User created with data: {'name': 'Kartika', 'email': 'kartika@kartika.id', 'gender': 'female', 'status': 'inactive'}</msg>
+<arg>User created with data: ${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.340608" elapsed="0.000986"/>
+</kw>
+<kw name="List users" owner="keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:36.343594" level="INFO">Creating Session using : alias=gorest, url=https://gorest.co.in/public/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>gorest</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T16:44:36.342595" elapsed="0.000999"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:36.345593" level="INFO">${url} = https://gorest.co.in/public/v2/users</msg>
+<var>${url}</var>
+<arg>${base_url}/users</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.344591" elapsed="0.001002"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:36.346592" level="INFO">${headers} = {'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Authorization=${token}</arg>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.345593" elapsed="0.000999"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:36.871741" level="INFO">GET Request : url=https://gorest.co.in/public/v2/users 
+ path_url=/public/v2/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-06-13T16:44:36.871741" level="INFO">GET Response : url=https://gorest.co.in/public/v2/users 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 13 Jun 2024 09:44:38 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0, private, must-revalidate', 'etag': 'W/"f7fe0455510f8c155873f37877682a21"', 'referrer-policy': 'strict-origin-when-cross-origin', 'vary': 'Origin', 'x-content-type-options': 'nosniff', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-links-current': 'https://gorest.co.in/public/v2/users?page=1', 'x-links-next': 'https://gorest.co.in/public/v2/users?page=2', 'x-links-previous': '', 'x-pagination-limit': '10', 'x-pagination-page': '1', 'x-pagination-pages': '300', 'x-pagination-total': '2997', 'x-permitted-cross-domain-policies': 'none', 'x-ratelimit-limit': '90', 'x-ratelimit-remaining': '87', 'x-ratelimit-reset': '3', 'x-request-id': '9fdbaed7-3f40-472c-aacc-14815ee4a2ba', 'x-runtime': '0.096877', 'x-xss-protection': '0', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=daUapwMsnnGmiFXefeHhTOOgOFB%2FxwsZNt0q8nzcTzSVKlv7So6qsV4PkVSlq5OY8GkBtgDtZup7s8MNuTYhrWMA%2BPsMx17OhnqhxSe9CIt9ewa2DwUlPXAh6IKQ5NA%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '893124a6880c797b-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":6961986,"name":"Kartika","email":"kartika@kartika.id","gender":"female","status":"inactive"},{"id":6961985,"name":"Akmal","email":"akmal@akmal.id","gender":"male","status":"active"},{"id":6961984,"name":"Akmal","email":"akmal@gmail.co.id","gender":"male","status":"active"},{"id":6961981,"name":"Olivia","email":"olivia@xyz.xyz","gender":"female","status":"inactive"},{"id":6961980,"name":"Rahman","email":"rahman@xyz.xyz","gender":"male","status":"active"},{"id":6961979,"name":"Kartika","email":"kartika@xyz.xyz","gender":"female","status":"inactive"},{"id":6961978,"name":"Akmal","email":"akmal@xxz.xyz","gender":"male","status":"active"},{"id":6961975,"name":"Akmal","email":"akmal@xyz.xyz","gender":"male","status":"active"},{"id":6961962,"name":"Olivia","email":"olivia@xyz.test","gender":"female","status":"inactive"},{"id":6961961,"name":"Rahman","email":"rahman@xyz.test","gender":"male","status":"active"}] 
+ </msg>
+<msg time="2024-06-13T16:44:36.871741" level="INFO">C:\Users\ALFAONE\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gorest.co.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-06-13T16:44:36.874747" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>gorest</arg>
+<arg>${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.347565" elapsed="0.527182"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-06-13T16:44:36.877772" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.875740" elapsed="0.002032"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-13T16:44:36.879772" level="INFO">[{"id":6961986,"name":"Kartika","email":"kartika@kartika.id","gender":"female","status":"inactive"},{"id":6961985,"name":"Akmal","email":"akmal@akmal.id","gender":"male","status":"active"},{"id":6961984,"name":"Akmal","email":"akmal@gmail.co.id","gender":"male","status":"active"},{"id":6961981,"name":"Olivia","email":"olivia@xyz.xyz","gender":"female","status":"inactive"},{"id":6961980,"name":"Rahman","email":"rahman@xyz.xyz","gender":"male","status":"active"},{"id":6961979,"name":"Kartika","email":"kartika@xyz.xyz","gender":"female","status":"inactive"},{"id":6961978,"name":"Akmal","email":"akmal@xxz.xyz","gender":"male","status":"active"},{"id":6961975,"name":"Akmal","email":"akmal@xyz.xyz","gender":"male","status":"active"},{"id":6961962,"name":"Olivia","email":"olivia@xyz.test","gender":"female","status":"inactive"},{"id":6961961,"name":"Rahman","email":"rahman@xyz.test","gender":"male","status":"active"}]</msg>
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.878772" elapsed="0.001999"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-06-13T16:44:36.880771" elapsed="0.000000"/>
+</return>
+<status status="PASS" start="2024-06-13T16:44:36.342595" elapsed="0.538176"/>
+</kw>
+<arg>${data}</arg>
+<status status="PASS" start="2024-06-13T16:44:35.533492" elapsed="1.347279"/>
+</kw>
+<arg>${user}</arg>
+<status status="PASS" start="2024-06-13T16:44:35.521499" elapsed="1.360271"/>
+</kw>
+<var name="${user}">{'name': 'Kartika', 'email': 'kartika@kartika.id', 'gender': 'female', 'status': 'inactive'}</var>
+<status status="PASS" start="2024-06-13T16:44:35.520500" elapsed="1.361270"/>
+</iter>
+<iter>
+<kw name="Create User" owner="keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:36.883769" level="INFO">${name} = Rahman</msg>
+<var>${name}</var>
+<arg>${user}[name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.883769" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:36.884768" level="INFO">${email} = rahman@rahman.id</msg>
+<var>${email}</var>
+<arg>${user}[email]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.884768" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:36.885768" level="INFO">${gender} = male</msg>
+<var>${gender}</var>
+<arg>${user}[gender]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.885768" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:36.886768" level="INFO">${status} = active</msg>
+<var>${status}</var>
+<arg>${user}[status]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.886768" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:36.888732" level="INFO">${data} = {'name': 'Rahman', 'email': 'rahman@rahman.id', 'gender': 'male', 'status': 'active'}</msg>
+<var>${data}</var>
+<arg>name=${name}</arg>
+<arg>email=${email}</arg>
+<arg>gender=${gender}</arg>
+<arg>status=${status}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.887738" elapsed="0.000994"/>
+</kw>
+<kw name="Create User With Data" owner="keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:36.893729" level="INFO">&amp;{headers} = { Authorization=Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c | Content-Type=application/json }</msg>
+<var>&amp;{headers}</var>
+<arg>Authorization=${token}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.891739" elapsed="0.001990"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:36.894731" level="INFO">Creating Session using : alias=gorest, url=https://gorest.co.in, headers={'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>gorest</arg>
+<arg>https://gorest.co.in</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T16:44:36.893729" elapsed="0.002007"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:37.582962" level="INFO">POST Request : url=https://gorest.co.in/public/v2/users 
+ path_url=/public/v2/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json', 'Content-Length': '85'} 
+ body=b'{"name": "Rahman", "email": "rahman@rahman.id", "gender": "male", "status": "active"}' 
+ </msg>
+<msg time="2024-06-13T16:44:37.582962" level="INFO">POST Response : url=https://gorest.co.in/public/v2/users 
+ status=201, reason=Created 
+ headers={'Date': 'Thu, 13 Jun 2024 09:44:39 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '91', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0, private, must-revalidate', 'etag': 'W/"fcb58cf30d209908cd3a52d2ad0d9603"', 'location': 'https://gorest.co.in/public/v2/users/6961987', 'referrer-policy': 'strict-origin-when-cross-origin', 'vary': 'Origin', 'x-content-type-options': 'nosniff', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-ratelimit-limit': '90', 'x-ratelimit-remaining': '86', 'x-ratelimit-reset': '3', 'x-request-id': 'c9e58912-fb6a-4409-b8e5-b8ae97196d8e', 'x-runtime': '0.116715', 'x-xss-protection': '0', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=UnECJD2Q0wYLKkT8DFWfisybPtVqz3UeI4cDatoooHPQXlfWnux3gjATttimv8ClrjXmsqyKq03XQb8Tr17CiuBqPoJOqaXnRRcrxwd9GfHqHNsG0ketzXJ5tvS0ZT4%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '893124aa1f9940ce-SIN', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":6961987,"name":"Rahman","email":"rahman@rahman.id","gender":"male","status":"active"} 
+ </msg>
+<msg time="2024-06-13T16:44:37.582962" level="INFO">C:\Users\ALFAONE\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gorest.co.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-06-13T16:44:37.585431" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>gorest</arg>
+<arg>/public/v2/users</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T16:44:36.896737" elapsed="0.688694"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-06-13T16:44:37.589437" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-06-13T16:44:37.586430" elapsed="0.003007"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-13T16:44:37.590435" level="INFO">User created with data: {'name': 'Rahman', 'email': 'rahman@rahman.id', 'gender': 'male', 'status': 'active'}</msg>
+<arg>User created with data: ${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-13T16:44:37.589437" elapsed="0.000998"/>
+</kw>
+<kw name="List users" owner="keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:37.592433" level="INFO">Creating Session using : alias=gorest, url=https://gorest.co.in/public/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>gorest</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T16:44:37.592433" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:37.595427" level="INFO">${url} = https://gorest.co.in/public/v2/users</msg>
+<var>${url}</var>
+<arg>${base_url}/users</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:37.594427" elapsed="0.001000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:37.597427" level="INFO">${headers} = {'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Authorization=${token}</arg>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:37.596426" elapsed="0.002001"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:38.323307" level="INFO">GET Request : url=https://gorest.co.in/public/v2/users 
+ path_url=/public/v2/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-06-13T16:44:38.323307" level="INFO">GET Response : url=https://gorest.co.in/public/v2/users 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 13 Jun 2024 09:44:39 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0, private, must-revalidate', 'etag': 'W/"b5aca0ffad01407288adaf03c02f7905"', 'referrer-policy': 'strict-origin-when-cross-origin', 'vary': 'Origin', 'x-content-type-options': 'nosniff', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-links-current': 'https://gorest.co.in/public/v2/users?page=1', 'x-links-next': 'https://gorest.co.in/public/v2/users?page=2', 'x-links-previous': '', 'x-pagination-limit': '10', 'x-pagination-page': '1', 'x-pagination-pages': '300', 'x-pagination-total': '2998', 'x-permitted-cross-domain-policies': 'none', 'x-ratelimit-limit': '90', 'x-ratelimit-remaining': '86', 'x-ratelimit-reset': '3', 'x-request-id': '07eddc25-c5ee-4b95-bab5-4d42fd6b9e10', 'x-runtime': '0.090134', 'x-xss-protection': '0', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=G9CIuRsLTaPvx7AHgiWDkuGiTcJ3QzNV%2Fae2yiSSCPc7m17IpKf%2BTecBHbqbzg2I22cAW7wXPXFCpWE2IV3JlJuAPobXwxkHy%2FuRDjWavlZT8dUysUso8NovGesiEaA%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '893124ae6b0487ae-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":6961987,"name":"Rahman","email":"rahman@rahman.id","gender":"male","status":"active"},{"id":6961986,"name":"Kartika","email":"kartika@kartika.id","gender":"female","status":"inactive"},{"id":6961985,"name":"Akmal","email":"akmal@akmal.id","gender":"male","status":"active"},{"id":6961984,"name":"Akmal","email":"akmal@gmail.co.id","gender":"male","status":"active"},{"id":6961981,"name":"Olivia","email":"olivia@xyz.xyz","gender":"female","status":"inactive"},{"id":6961980,"name":"Rahman","email":"rahman@xyz.xyz","gender":"male","status":"active"},{"id":6961979,"name":"Kartika","email":"kartika@xyz.xyz","gender":"female","status":"inactive"},{"id":6961978,"name":"Akmal","email":"akmal@xxz.xyz","gender":"male","status":"active"},{"id":6961975,"name":"Akmal","email":"akmal@xyz.xyz","gender":"male","status":"active"},{"id":6961962,"name":"Olivia","email":"olivia@xyz.test","gender":"female","status":"inactive"}] 
+ </msg>
+<msg time="2024-06-13T16:44:38.324306" level="INFO">C:\Users\ALFAONE\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gorest.co.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-06-13T16:44:38.327234" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>gorest</arg>
+<arg>${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T16:44:37.598427" elapsed="0.728807"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-06-13T16:44:38.330267" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-06-13T16:44:38.328243" elapsed="0.002024"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-13T16:44:38.332266" level="INFO">[{"id":6961987,"name":"Rahman","email":"rahman@rahman.id","gender":"male","status":"active"},{"id":6961986,"name":"Kartika","email":"kartika@kartika.id","gender":"female","status":"inactive"},{"id":6961985,"name":"Akmal","email":"akmal@akmal.id","gender":"male","status":"active"},{"id":6961984,"name":"Akmal","email":"akmal@gmail.co.id","gender":"male","status":"active"},{"id":6961981,"name":"Olivia","email":"olivia@xyz.xyz","gender":"female","status":"inactive"},{"id":6961980,"name":"Rahman","email":"rahman@xyz.xyz","gender":"male","status":"active"},{"id":6961979,"name":"Kartika","email":"kartika@xyz.xyz","gender":"female","status":"inactive"},{"id":6961978,"name":"Akmal","email":"akmal@xxz.xyz","gender":"male","status":"active"},{"id":6961975,"name":"Akmal","email":"akmal@xyz.xyz","gender":"male","status":"active"},{"id":6961962,"name":"Olivia","email":"olivia@xyz.test","gender":"female","status":"inactive"}]</msg>
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-13T16:44:38.330267" elapsed="0.001999"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-06-13T16:44:38.332266" elapsed="0.000999"/>
+</return>
+<status status="PASS" start="2024-06-13T16:44:37.590435" elapsed="0.742830"/>
+</kw>
+<arg>${data}</arg>
+<status status="PASS" start="2024-06-13T16:44:36.890731" elapsed="1.442534"/>
+</kw>
+<arg>${user}</arg>
+<status status="PASS" start="2024-06-13T16:44:36.882769" elapsed="1.450496"/>
+</kw>
+<var name="${user}">{'name': 'Rahman', 'email': 'rahman@rahman.id', 'gender': 'male', 'status': 'active'}</var>
+<status status="PASS" start="2024-06-13T16:44:36.881770" elapsed="1.451495"/>
+</iter>
+<iter>
+<kw name="Create User" owner="keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:38.336231" level="INFO">${name} = Olivia</msg>
+<var>${name}</var>
+<arg>${user}[name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:38.335264" elapsed="0.000967"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:38.337243" level="INFO">${email} = olivia@olivia.id</msg>
+<var>${email}</var>
+<arg>${user}[email]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:38.337243" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:38.339228" level="INFO">${gender} = female</msg>
+<var>${gender}</var>
+<arg>${user}[gender]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:38.338263" elapsed="0.000965"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:38.341234" level="INFO">${status} = inactive</msg>
+<var>${status}</var>
+<arg>${user}[status]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:38.340229" elapsed="0.001005"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:38.343233" level="INFO">${data} = {'name': 'Olivia', 'email': 'olivia@olivia.id', 'gender': 'female', 'status': 'inactive'}</msg>
+<var>${data}</var>
+<arg>name=${name}</arg>
+<arg>email=${email}</arg>
+<arg>gender=${gender}</arg>
+<arg>status=${status}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:38.342234" elapsed="0.000999"/>
+</kw>
+<kw name="Create User With Data" owner="keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:38.349231" level="INFO">&amp;{headers} = { Authorization=Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c | Content-Type=application/json }</msg>
+<var>&amp;{headers}</var>
+<arg>Authorization=${token}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:38.346224" elapsed="0.003007"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:38.350226" level="INFO">Creating Session using : alias=gorest, url=https://gorest.co.in, headers={'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>gorest</arg>
+<arg>https://gorest.co.in</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T16:44:38.349231" elapsed="0.001995"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:39.295093" level="INFO">POST Request : url=https://gorest.co.in/public/v2/users 
+ path_url=/public/v2/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json', 'Content-Length': '89'} 
+ body=b'{"name": "Olivia", "email": "olivia@olivia.id", "gender": "female", "status": "inactive"}' 
+ </msg>
+<msg time="2024-06-13T16:44:39.295093" level="INFO">POST Response : url=https://gorest.co.in/public/v2/users 
+ status=201, reason=Created 
+ headers={'Date': 'Thu, 13 Jun 2024 09:44:40 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '95', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0, private, must-revalidate', 'etag': 'W/"449add6b8cd4ae3628ae50cb1043490c"', 'location': 'https://gorest.co.in/public/v2/users/6961988', 'referrer-policy': 'strict-origin-when-cross-origin', 'vary': 'Origin', 'x-content-type-options': 'nosniff', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-permitted-cross-domain-policies': 'none', 'x-ratelimit-limit': '90', 'x-ratelimit-remaining': '86', 'x-ratelimit-reset': '3', 'x-request-id': '57b74e30-5d13-44bf-b930-282685d8992f', 'x-runtime': '0.151976', 'x-xss-protection': '0', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=8%2BSHAt9eTNI5kEVU8sWXoHqXtFUyx6%2Fb0JmZu2%2FQoSbF6EOX6sje3K53eywl7nu2Y21ece9O8xn4hf3qYrnL7UzuNAiAmJAv%2Fd%2B9xbjS5lTG2AOjLq0NwaEEENFmd4Y%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '893124b49de74aa1-SIN', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":6961988,"name":"Olivia","email":"olivia@olivia.id","gender":"female","status":"inactive"} 
+ </msg>
+<msg time="2024-06-13T16:44:39.296092" level="INFO">C:\Users\ALFAONE\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gorest.co.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-06-13T16:44:39.298748" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>gorest</arg>
+<arg>/public/v2/users</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T16:44:38.351226" elapsed="0.947522"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-06-13T16:44:39.300784" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-06-13T16:44:39.299784" elapsed="0.002001"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-13T16:44:39.302747" level="INFO">User created with data: {'name': 'Olivia', 'email': 'olivia@olivia.id', 'gender': 'female', 'status': 'inactive'}</msg>
+<arg>User created with data: ${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-13T16:44:39.302747" elapsed="0.001000"/>
+</kw>
+<kw name="List users" owner="keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:39.305780" level="INFO">Creating Session using : alias=gorest, url=https://gorest.co.in/public/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>gorest</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T16:44:39.305780" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:39.308745" level="INFO">${url} = https://gorest.co.in/public/v2/users</msg>
+<var>${url}</var>
+<arg>${base_url}/users</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:39.307745" elapsed="0.001000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:39.311745" level="INFO">${headers} = {'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Authorization=${token}</arg>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:39.309744" elapsed="0.003000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:39.982862" level="INFO">GET Request : url=https://gorest.co.in/public/v2/users 
+ path_url=/public/v2/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-06-13T16:44:39.983862" level="INFO">GET Response : url=https://gorest.co.in/public/v2/users 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 13 Jun 2024 09:44:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0, private, must-revalidate', 'etag': 'W/"db97f2dcecb9494cf8971fad356e15d4"', 'referrer-policy': 'strict-origin-when-cross-origin', 'vary': 'Origin', 'x-content-type-options': 'nosniff', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-links-current': 'https://gorest.co.in/public/v2/users?page=1', 'x-links-next': 'https://gorest.co.in/public/v2/users?page=2', 'x-links-previous': '', 'x-pagination-limit': '10', 'x-pagination-page': '1', 'x-pagination-pages': '300', 'x-pagination-total': '2999', 'x-permitted-cross-domain-policies': 'none', 'x-ratelimit-limit': '90', 'x-ratelimit-remaining': '86', 'x-ratelimit-reset': '3', 'x-request-id': '6975d6cb-ca7b-4a44-b2c0-f914ad5de410', 'x-runtime': '0.068410', 'x-xss-protection': '0', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=VvNWRSy151qKfUYY4D4PJ8ddBvZL0o2Cozmw%2BxdRLmQSklJqZJ2DiTpUjixZGxzzkO1h1CYzSkuQ0bj9xthfBN9W9xXg1SJWBU46d7CWlInMBZQAKYWNTuTco5bUWQ0%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '893124b95ca68204-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":6961988,"name":"Olivia","email":"olivia@olivia.id","gender":"female","status":"inactive"},{"id":6961987,"name":"Rahman","email":"rahman@rahman.id","gender":"male","status":"active"},{"id":6961986,"name":"Kartika","email":"kartika@kartika.id","gender":"female","status":"inactive"},{"id":6961985,"name":"Akmal","email":"akmal@akmal.id","gender":"male","status":"active"},{"id":6961984,"name":"Akmal","email":"akmal@gmail.co.id","gender":"male","status":"active"},{"id":6961981,"name":"Olivia","email":"olivia@xyz.xyz","gender":"female","status":"inactive"},{"id":6961980,"name":"Rahman","email":"rahman@xyz.xyz","gender":"male","status":"active"},{"id":6961979,"name":"Kartika","email":"kartika@xyz.xyz","gender":"female","status":"inactive"},{"id":6961978,"name":"Akmal","email":"akmal@xxz.xyz","gender":"male","status":"active"},{"id":6961975,"name":"Akmal","email":"akmal@xyz.xyz","gender":"male","status":"active"}] 
+ </msg>
+<msg time="2024-06-13T16:44:39.983862" level="INFO">C:\Users\ALFAONE\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gorest.co.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-06-13T16:44:39.986827" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>gorest</arg>
+<arg>${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T16:44:39.313743" elapsed="0.673084"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-06-13T16:44:39.989831" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-06-13T16:44:39.987834" elapsed="0.001997"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-13T16:44:39.993831" level="INFO">[{"id":6961988,"name":"Olivia","email":"olivia@olivia.id","gender":"female","status":"inactive"},{"id":6961987,"name":"Rahman","email":"rahman@rahman.id","gender":"male","status":"active"},{"id":6961986,"name":"Kartika","email":"kartika@kartika.id","gender":"female","status":"inactive"},{"id":6961985,"name":"Akmal","email":"akmal@akmal.id","gender":"male","status":"active"},{"id":6961984,"name":"Akmal","email":"akmal@gmail.co.id","gender":"male","status":"active"},{"id":6961981,"name":"Olivia","email":"olivia@xyz.xyz","gender":"female","status":"inactive"},{"id":6961980,"name":"Rahman","email":"rahman@xyz.xyz","gender":"male","status":"active"},{"id":6961979,"name":"Kartika","email":"kartika@xyz.xyz","gender":"female","status":"inactive"},{"id":6961978,"name":"Akmal","email":"akmal@xxz.xyz","gender":"male","status":"active"},{"id":6961975,"name":"Akmal","email":"akmal@xyz.xyz","gender":"male","status":"active"}]</msg>
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-13T16:44:39.990831" elapsed="0.003000"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-06-13T16:44:39.993831" elapsed="0.000000"/>
+</return>
+<status status="PASS" start="2024-06-13T16:44:39.304782" elapsed="0.690047"/>
+</kw>
+<arg>${data}</arg>
+<status status="PASS" start="2024-06-13T16:44:38.344232" elapsed="1.650597"/>
+</kw>
+<arg>${user}</arg>
+<status status="PASS" start="2024-06-13T16:44:38.334265" elapsed="1.661555"/>
+</kw>
+<var name="${user}">{'name': 'Olivia', 'email': 'olivia@olivia.id', 'gender': 'female', 'status': 'inactive'}</var>
+<status status="PASS" start="2024-06-13T16:44:38.334265" elapsed="1.661555"/>
+</iter>
+<var>${user}</var>
+<value>@{users}</value>
+<status status="PASS" start="2024-06-13T16:44:34.273390" elapsed="5.722430"/>
+</for>
+<doc>Create users by reading data from an Excel file and sending POST requests.</doc>
+<status status="PASS" start="2024-06-13T16:44:34.263400" elapsed="5.733420"/>
+</test>
+<test id="s1-t3" name="Show list users" line="19">
+<kw name="List users" owner="keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:40.008813" level="INFO">Creating Session using : alias=gorest, url=https://gorest.co.in/public/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>gorest</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T16:44:40.007813" elapsed="0.002000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T16:44:40.012811" level="INFO">${url} = https://gorest.co.in/public/v2/users</msg>
+<var>${url}</var>
+<arg>${base_url}/users</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T16:44:40.011812" elapsed="0.000999"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T16:44:40.014816" level="INFO">${headers} = {'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Authorization=${token}</arg>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T16:44:40.013811" elapsed="0.001005"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T16:44:40.767655" level="INFO">GET Request : url=https://gorest.co.in/public/v2/users 
+ path_url=/public/v2/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Authorization': 'Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-06-13T16:44:40.768657" level="INFO">GET Response : url=https://gorest.co.in/public/v2/users 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 13 Jun 2024 09:44:42 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0, private, must-revalidate', 'etag': 'W/"db97f2dcecb9494cf8971fad356e15d4"', 'referrer-policy': 'strict-origin-when-cross-origin', 'vary': 'Origin', 'x-content-type-options': 'nosniff', 'x-download-options': 'noopen', 'x-frame-options': 'SAMEORIGIN', 'x-links-current': 'https://gorest.co.in/public/v2/users?page=1', 'x-links-next': 'https://gorest.co.in/public/v2/users?page=2', 'x-links-previous': '', 'x-pagination-limit': '10', 'x-pagination-page': '1', 'x-pagination-pages': '300', 'x-pagination-total': '2999', 'x-permitted-cross-domain-policies': 'none', 'x-ratelimit-limit': '90', 'x-ratelimit-remaining': '86', 'x-ratelimit-reset': '3', 'x-request-id': 'cdeaeca5-96d5-4665-86cc-9f60f22bce4a', 'x-runtime': '0.061436', 'x-xss-protection': '0', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=WtsXvNz%2B8XwAUe7HaUR0M9nahL25GDbqbyHgd92PLwZdDHf6hLtEDHh4NcTd318%2BNL%2BCu62%2BhGzBgztP0Msp2FsqmiFxQijUyGDpH7rRQrU4%2FD4%2BdlRPY92nKylQzgQ%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '893124be3e53a03c-SIN', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=[{"id":6961988,"name":"Olivia","email":"olivia@olivia.id","gender":"female","status":"inactive"},{"id":6961987,"name":"Rahman","email":"rahman@rahman.id","gender":"male","status":"active"},{"id":6961986,"name":"Kartika","email":"kartika@kartika.id","gender":"female","status":"inactive"},{"id":6961985,"name":"Akmal","email":"akmal@akmal.id","gender":"male","status":"active"},{"id":6961984,"name":"Akmal","email":"akmal@gmail.co.id","gender":"male","status":"active"},{"id":6961981,"name":"Olivia","email":"olivia@xyz.xyz","gender":"female","status":"inactive"},{"id":6961980,"name":"Rahman","email":"rahman@xyz.xyz","gender":"male","status":"active"},{"id":6961979,"name":"Kartika","email":"kartika@xyz.xyz","gender":"female","status":"inactive"},{"id":6961978,"name":"Akmal","email":"akmal@xxz.xyz","gender":"male","status":"active"},{"id":6961975,"name":"Akmal","email":"akmal@xyz.xyz","gender":"male","status":"active"}] 
+ </msg>
+<msg time="2024-06-13T16:44:40.768657" level="INFO">C:\Users\ALFAONE\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'gorest.co.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-06-13T16:44:40.773650" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>gorest</arg>
+<arg>${url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T16:44:40.015825" elapsed="0.757825"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-06-13T16:44:40.775649" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-06-13T16:44:40.773650" elapsed="0.001999"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-13T16:44:40.777649" level="INFO">[{"id":6961988,"name":"Olivia","email":"olivia@olivia.id","gender":"female","status":"inactive"},{"id":6961987,"name":"Rahman","email":"rahman@rahman.id","gender":"male","status":"active"},{"id":6961986,"name":"Kartika","email":"kartika@kartika.id","gender":"female","status":"inactive"},{"id":6961985,"name":"Akmal","email":"akmal@akmal.id","gender":"male","status":"active"},{"id":6961984,"name":"Akmal","email":"akmal@gmail.co.id","gender":"male","status":"active"},{"id":6961981,"name":"Olivia","email":"olivia@xyz.xyz","gender":"female","status":"inactive"},{"id":6961980,"name":"Rahman","email":"rahman@xyz.xyz","gender":"male","status":"active"},{"id":6961979,"name":"Kartika","email":"kartika@xyz.xyz","gender":"female","status":"inactive"},{"id":6961978,"name":"Akmal","email":"akmal@xxz.xyz","gender":"male","status":"active"},{"id":6961975,"name":"Akmal","email":"akmal@xyz.xyz","gender":"male","status":"active"}]</msg>
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-13T16:44:40.776649" elapsed="0.001999"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-06-13T16:44:40.778648" elapsed="0.000000"/>
+</return>
+<status status="PASS" start="2024-06-13T16:44:40.005814" elapsed="0.772834"/>
+</kw>
+<status status="PASS" start="2024-06-13T16:44:40.002815" elapsed="0.777832"/>
+</test>
+<status status="PASS" start="2024-06-13T16:44:31.826420" elapsed="8.957224"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Test Cases">Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
