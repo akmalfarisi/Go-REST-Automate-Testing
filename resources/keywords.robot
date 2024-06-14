@@ -4,7 +4,7 @@ Library    Process
 
 *** Variables ***
 ${base_url}=    https://gorest.co.in/public/v2
-${token}=    Bearer f10a19599ec07a28ec2cb0694073ad0ce5733d2f964997088e7a0950ecabdf5c
+${token}=    Bearer [YOUR_ACCESS_TOKEN_HERE]
 
 *** Keywords ***
 Get Users
